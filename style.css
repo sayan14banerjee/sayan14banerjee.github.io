@@ -38,17 +38,7 @@ header {
     margin-top: 10px;
   }
 
-  header::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Black overlay with opacity for contrast */
-    z-index: -1; /* Keeps the overlay behind the text */
-  }
-  
+ 
   /* Section Styles */
   section {
     background-color: rgb(223, 245, 253);
