@@ -16,7 +16,7 @@ body {
   /* Header Section */
   /* Header Section */
 header {
-  background-image: url('bg.jpg'); /* Corrected path for local image */
+  background-image: url('https://github.com/sayan14banerjee/sayan14banerjee.github.io/blob/main/bg.jpg'); /* Corrected path for local image */
   background-size: cover; /* Ensure the image covers the header */
   background-position: center; /* Center the image */
   color: rgb(5, 5, 5);
@@ -38,7 +38,17 @@ header {
     margin-top: 10px;
   }
 
- 
+  header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Black overlay with opacity for contrast */
+    z-index: -1; /* Keeps the overlay behind the text */
+  }
+  
   /* Section Styles */
   section {
     background-color: rgb(223, 245, 253);
