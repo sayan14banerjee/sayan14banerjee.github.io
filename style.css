@@ -1,0 +1,156 @@
+/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #c2daf1;
+    color: #333;
+  }
+  
+  .container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  /* Header Section */
+  /* Header Section */
+header {
+  background-image: url('D:/Work/Portfolio/bg.jpg'); /* Corrected path for local image */
+  background-size: cover; /* Ensure the image covers the header */
+  background-position: center; /* Center the image */
+  color: rgb(5, 5, 5);
+  text-align: center;
+  padding: 60px 0;
+  position: relative;
+  background-attachment: fixed; /* Optional for a parallax effect */
+}
+
+  
+  header h1 {
+    font-size: 3rem;
+    font-weight: 700;
+  }
+  
+  header p {
+    font-size: 1.2rem;
+    font-weight: 400;
+    margin-top: 10px;
+  }
+
+  header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Black overlay with opacity for contrast */
+    z-index: -1; /* Keeps the overlay behind the text */
+  }
+  
+  /* Section Styles */
+  section {
+    background-color: rgb(223, 245, 253);
+    padding: 40px 0;
+    margin-bottom: 40px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  section h2 {
+    font-size: 2.2rem;
+    font-weight: 600;
+    color: #34495E;
+    margin-bottom: 20px;
+  }
+  
+  p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+  }
+  
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  ul li {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+  }
+  
+  /* Project Styles */
+  .project {
+    background-color: #d6e9ee;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .project h3 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    color: #2980B9;
+  }
+  
+  .project p {
+    font-size: 1rem;
+    margin-bottom: 10px;
+  }
+  
+  .project a {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #fff;
+    background-color: #2980B9;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+  }
+  
+  .project a:hover {
+    background-color: #3498DB;
+  }
+  
+  /* Skills Section */
+  #skills ul li {
+    background-color: #d6e9ee;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 10px 0;
+  }
+  
+  #skills ul li:hover {
+    background-color: #bdc3c7;
+  }
+  
+  /* Contact Section */
+  #contact ul li {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+  }
+  
+  #contact a {
+    color: #2980B9;
+  }
+  
+  #contact a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Footer Section */
+  footer {
+    background-color: #2C3E50;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+  }
+  
+  footer p {
+    margin: 0;
+    font-size: 1rem;
+  }
+  
