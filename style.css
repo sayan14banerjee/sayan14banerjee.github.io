@@ -16,7 +16,7 @@ body {
   /* Header Section */
   /* Header Section */
 header {
-  background-image: url('https://github.com/sayan14banerjee/sayan14banerjee.github.io/blob/main/bg.jpg'); /* Corrected path for local image */
+  background-image: url('https://github.com/sayan14banerjee/sayan14banerjee.github.io/blob/main/bg.jpg?raw=true'); /* Corrected path for local image */
   background-size: cover; /* Ensure the image covers the header */
   background-position: center; /* Center the image */
   color: rgb(5, 5, 5);
