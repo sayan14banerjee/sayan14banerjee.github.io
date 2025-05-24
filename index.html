@@ -1,106 +1,866 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Sayan Banerjee - Machine Learning Developer Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sayan Banerjee - ML & Backend Developer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #6366f1;
+            --secondary-color: #8b5cf6;
+            --accent-color: #06b6d4;
+            --dark-bg: #0f172a;
+            --card-bg: #1e293b;
+            --text-primary: #f8fafc;
+            --text-secondary: #cbd5e1;
+            --gradient: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #06b6d4 100%);
+            --glass-bg: rgba(30, 41, 59, 0.7);
+            --border-glass: rgba(148, 163, 184, 0.2);
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--dark-bg);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Background Animation */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 20% 50%, rgba(99, 102, 241, 0.1) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 20%, rgba(139, 92, 246, 0.1) 0%, transparent 50%),
+                        radial-gradient(circle at 40% 80%, rgba(6, 182, 212, 0.1) 0%, transparent 50%);
+            z-index: -1;
+            animation: float 20s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            33% { transform: translateY(-20px) rotate(1deg); }
+            66% { transform: translateY(10px) rotate(-1deg); }
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-glass);
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background: var(--gradient);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 2rem;
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: slideInDown 1s ease-out;
+        }
+
+        .hero .subtitle {
+            font-size: 1.5rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            animation: slideInUp 1s ease-out 0.2s both;
+        }
+
+        .hero .description {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            margin-bottom: 3rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            animation: fadeIn 1s ease-out 0.4s both;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            animation: fadeIn 1s ease-out 0.6s both;
+        }
+
+        .btn {
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-primary {
+            background: var(--gradient);
+            color: white;
+            transform: translateY(0);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(99, 102, 241, 0.4);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--text-primary);
+            border: 2px solid var(--border-glass);
+        }
+
+        .btn-secondary:hover {
+            background: var(--glass-bg);
+            border-color: var(--primary-color);
+            transform: translateY(-3px);
+        }
+
+        /* Section Styles */
+        .section {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 3rem;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* About Section */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about-text {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 1.5rem;
+            background: var(--glass-bg);
+            border-radius: 20px;
+            border: 1px solid var(--border-glass);
+            transition: all 0.3s ease;
+        }
+
+        .stat-item:hover {
+            transform: translateY(-5px);
+            background: var(--card-bg);
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        .stat-label {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        /* Experience Section */
+        .experience-item {
+            background: var(--glass-bg);
+            border-radius: 20px;
+            padding: 2rem;
+            border: 1px solid var(--border-glass);
+            margin-bottom: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .experience-item:hover {
+            transform: translateY(-5px);
+            background: var(--card-bg);
+        }
+
+        .experience-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 1rem;
+        }
+
+        .experience-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .experience-company {
+            color: var(--primary-color);
+            font-weight: 500;
+        }
+
+        .experience-date {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        /* Skills Section */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-category {
+            background: var(--glass-bg);
+            border-radius: 20px;
+            padding: 2rem;
+            border: 1px solid var(--border-glass);
+            transition: all 0.3s ease;
+        }
+
+        .skill-category:hover {
+            transform: translateY(-5px);
+            background: var(--card-bg);
+        }
+
+        .skill-category h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .skill-tag {
+            background: rgba(99, 102, 241, 0.2);
+            color: var(--text-primary);
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            border: 1px solid rgba(99, 102, 241, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .skill-tag:hover {
+            background: rgba(99, 102, 241, 0.4);
+            transform: translateY(-2px);
+        }
+
+        /* Projects Section */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background: var(--glass-bg);
+            border-radius: 20px;
+            padding: 2rem;
+            border: 1px solid var(--border-glass);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            background: var(--card-bg);
+        }
+
+        .project-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .project-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .project-description {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+        }
+
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .tech-tag {
+            background: rgba(6, 182, 212, 0.2);
+            color: var(--accent-color);
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            border: 1px solid rgba(6, 182, 212, 0.3);
+        }
+
+        .project-status {
+            display: inline-block;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+
+        .status-progress {
+            background: rgba(251, 191, 36, 0.2);
+            color: #fbbf24;
+            border: 1px solid rgba(251, 191, 36, 0.3);
+        }
+
+        .status-completed {
+            background: rgba(34, 197, 94, 0.2);
+            color: #22c55e;
+            border: 1px solid rgba(34, 197, 94, 0.3);
+        }
+
+        /* Education & Certifications */
+        .education-item, .cert-item {
+            background: var(--glass-bg);
+            border-radius: 20px;
+            padding: 1.5rem;
+            border: 1px solid var(--border-glass);
+            margin-bottom: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .education-item:hover, .cert-item:hover {
+            transform: translateX(10px);
+            background: var(--card-bg);
+        }
+
+        .cert-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1rem;
+        }
+
+        /* Contact Section */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .contact-item {
+            background: var(--glass-bg);
+            border-radius: 20px;
+            padding: 2rem;
+            border: 1px solid var(--border-glass);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .contact-item:hover {
+            transform: translateY(-5px);
+            background: var(--card-bg);
+        }
+
+        .contact-icon {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .contact-item a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-item:hover a {
+            color: var(--primary-color);
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero .subtitle {
+                font-size: 1.2rem;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .experience-header {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+        }
+
+        /* Scroll behavior */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--dark-bg);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--primary-color);
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--secondary-color);
+        }
+    </style>
 </head>
 <body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">Sayan Banerjee</div>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
 
-  <!-- Header Section -->
-  <header>
-    <div class="container">
-      <h1>Sayan Banerjee</h1>
-      <p>Machine Learning Developer</p>
-    </div>
-  </header>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Sayan Banerjee</h1>
+            <p class="subtitle">ML Developer — Backend Developer</p>
+            <p class="description">
+                Enthusiastic and detail-oriented ML and Backend Developer with strong fundamentals in Data Structures and Algorithms. 
+                Passionate about building scalable, AI-powered applications and solving real-world problems with a collaborative mindset and strong drive to innovate.
+            </p>
+            <div class="cta-buttons">
+                <a href="#contact" class="btn btn-primary">
+                    <i class="fas fa-envelope"></i> Get In Touch
+                </a>
+                <a href="#projects" class="btn btn-secondary">
+                    <i class="fas fa-code"></i> View Projects
+                </a>
+            </div>
+        </div>
+    </section>
 
-  <!-- About Section -->
-  <section id="about" class="container">
-    <h2>About Me</h2>
-    <p>I am a Machine Learning Developer with expertise in data analysis, predictive modeling, and AI-driven solutions. Proficient in Python, TensorFlow, and various machine learning algorithms, I focus on delivering innovative and efficient solutions for complex problems. Currently, I am working on deepfake detection and healthcare prediction models.</p>
-  </section>
+    <!-- About Section -->
+    <section id="about" class="section">
+        <h2 class="section-title">About Me</h2>
+        <div class="about-content">
+            <div class="about-text">
+                <p>I'm a passionate ML and Backend Developer currently pursuing my MCA at the University of North Bengal. With experience in developing scalable backend systems using Node.js and AWS services, I focus on creating AI-powered solutions that solve real-world problems.</p>
+                <p>Currently working as a Backend Developer Intern at Simpsoft Solutions, I've been involved in building product-based solutions and fixing critical system bugs. My expertise spans across machine learning frameworks, cloud technologies, and modern backend development practices.</p>
+            </div>
+            <div class="stats">
+                <div class="stat-item">
+                    <div class="stat-number">2+</div>
+                    <div class="stat-label">Years Experience</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">4+</div>
+                    <div class="stat-label">ML Projects</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">6+</div>
+                    <div class="stat-label">Certifications</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">9.14</div>
+                    <div class="stat-label">CGPA</div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <!-- Projects Section -->
-  <section id="projects" class="container">
-    <h2>Projects</h2>
+    <!-- Experience Section -->
+    <section id="experience" class="section">
+        <h2 class="section-title">Experience</h2>
+        <div class="experience-item">
+            <div class="experience-header">
+                <div>
+                    <div class="experience-title">Backend Developer Intern</div>
+                    <div class="experience-company">Simpsoft Solutions Pvt. Ltd.</div>
+                </div>
+                <div class="experience-date">Mar 2025 – Present</div>
+            </div>
+            <p>Working in a product-based development team, fixing bugs and building scalable backend features using Node.js and AWS. Contributing to the development of robust systems that serve enterprise-level applications.</p>
+        </div>
+    </section>
 
-    <div class="project">
-      <h3>Deepfake Detection using CNN</h3>
-      <p><strong>Technologies:</strong> Python, TensorFlow, CNN, OpenCV</p>
-      <p>This project aims to detect deepfake content using Convolutional Neural Networks (CNNs). By analyzing facial features and other video elements, it identifies manipulated content. The project improves content authenticity verification.</p>
-      <a href="#" target="_blank" class="btn">View Project</a>
-    </div>
+    <!-- Skills Section -->
+    <section id="skills" class="section">
+        <h2 class="section-title">Technical Skills</h2>
+        <div class="skills-grid">
+            <div class="skill-category">
+                <h3><i class="fas fa-code"></i> Programming Languages</h3>
+                <div class="skill-tags">
+                    <span class="skill-tag">Python</span>
+                    <span class="skill-tag">JavaScript</span>
+                    <span class="skill-tag">SQL</span>
+                </div>
+            </div>
+            <div class="skill-category">
+                <h3><i class="fas fa-brain"></i> ML/AI Frameworks</h3>
+                <div class="skill-tags">
+                    <span class="skill-tag">Scikit-Learn</span>
+                    <span class="skill-tag">TensorFlow</span>
+                    <span class="skill-tag">OpenCV</span>
+                    <span class="skill-tag">Matplotlib</span>
+                    <span class="skill-tag">Seaborn</span>
+                </div>
+            </div>
+            <div class="skill-category">
+                <h3><i class="fas fa-server"></i> Backend & Tools</h3>
+                <div class="skill-tags">
+                    <span class="skill-tag">Node.js</span>
+                    <span class="skill-tag">REST APIs</span>
+                    <span class="skill-tag">Git</span>
+                    <span class="skill-tag">VSCode</span>
+                </div>
+            </div>
+            <div class="skill-category">
+                <h3><i class="fas fa-cloud"></i> Cloud & DevOps</h3>
+                <div class="skill-tags">
+                    <span class="skill-tag">AWS Lambda</span>
+                    <span class="skill-tag">AWS S3</span>
+                    <span class="skill-tag">DynamoDB</span>
+                    <span class="skill-tag">Serverless Framework</span>
+                </div>
+            </div>
+            <div class="skill-category">
+                <h3><i class="fas fa-database"></i> Databases</h3>
+                <div class="skill-tags">
+                    <span class="skill-tag">MySQL</span>
+                    <span class="skill-tag">DynamoDB</span>
+                </div>
+            </div>
+            <div class="skill-category">
+                <h3><i class="fas fa-user-friends"></i> Soft Skills</h3>
+                <div class="skill-tags">
+                    <span class="skill-tag">Problem Solving</span>
+                    <span class="skill-tag">Self-Learning</span>
+                    <span class="skill-tag">Adaptability</span>
+                    <span class="skill-tag">Presentation</span>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <div class="project">
-      <h3>MCDA based selection of Machine Learning Algorithm for Heart Attack Prediction</h3>
-      <p><strong>Technologies:</strong> Python, Scikit-learn, Machine Learning Algorithms</p>
-      <p>A predictive model designed to help detect heart disease risks based on patient data. This project utilizes various classification algorithms and demonstrates the use of machine learning in healthcare.</p>
-      <a href="https://github.com/sayan14banerjee/MCDA-based-selection-of-Machine-Learning-Algorithm-for-Heart-Attack-Prediction" target="_blank" class="btn">View Project</a>
-    </div>
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+        <h2 class="section-title">Featured Projects</h2>
+        <div class="projects-grid">
+            <div class="project-card">
+                <div class="project-status status-progress">In Progress</div>
+                <h3 class="project-title">Deepfake Detection</h3>
+                <p class="project-description">
+                    Detecting deepfakes using eye/lip motion, pixel anomalies, and geometric facial features. 
+                    Using OpenCV to track facial landmarks and motion irregularities, with CNN modeling for accurate detection.
+                </p>
+                <div class="project-tech">
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">OpenCV</span>
+                    <span class="tech-tag">TensorFlow</span>
+                    <span class="tech-tag">CNN</span>
+                    <span class="tech-tag">Scikit-Learn</span>
+                </div>
+                <a href="#" class="btn btn-secondary">
+                    <i class="fas fa-eye"></i> View Details
+                </a>
+            </div>
 
-    <div class="project">
-      <h3>House Rent Prediction</h3>
-      <p><strong>Technologies:</strong> Python, Machine Learning, Regression Models</p>
-      <p>A project focused on predicting house rent prices based on various factors like location, size, and amenities. The model employs regression algorithms for accurate price estimation.</p>
-      <a href="https://github.com/sayan14banerjee/House-Rent-prediction" target="_blank" class="btn">View Project</a>
-    </div>
+            <div class="project-card">
+                <div class="project-status status-completed">Completed</div>
+                <h3 class="project-title">House Rent Prediction</h3>
+                <p class="project-description">
+                    Predicted rental prices using regression models on real estate datasets. 
+                    Implemented various ML algorithms to provide accurate price estimations based on property features.
+                </p>
+                <div class="project-tech">
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">Scikit-Learn</span>
+                    <span class="tech-tag">Pandas</span>
+                    <span class="tech-tag">Matplotlib</span>
+                </div>
+                <a href="https://github.com/sayan14banerjee/House-Rent-prediction" class="btn btn-secondary" target="_blank">
+                    <i class="fab fa-github"></i> View Code
+                </a>
+            </div>
 
-    <div class="project">
-      <h3>Iris Flower Classification Model</h3>
-      <p><strong>Technologies:</strong> Python, Scikit-learn, Machine Learning</p>
-      <p>An implementation of a classification model using the Iris dataset to predict flower species based on sepal and petal dimensions. It demonstrates basic classification techniques and model evaluation.</p>
-      <a href="https://github.com/sayan14banerjee/iris_flower_classification" target="_blank" class="btn">View Project</a>
-    </div>
-  </section>
+            <div class="project-card">
+                <div class="project-status status-completed">Completed</div>
+                <h3 class="project-title">Heart Disease Prediction</h3>
+                <p class="project-description">
+                    Built a classifier to assess heart disease risk using patient data. 
+                    Demonstrates the application of machine learning in healthcare for early disease detection.
+                </p>
+                <div class="project-tech">
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">Scikit-Learn</span>
+                    <span class="tech-tag">Jupyter Notebook</span>
+                    <span class="tech-tag">Data Analysis</span>
+                </div>
+                <a href="https://github.com/sayan14banerjee/MCDA-based-selection-of-Machine-Learning-Algorithm-for-Heart-Attack-Prediction" class="btn btn-secondary" target="_blank">
+                    <i class="fab fa-github"></i> View Code
+                </a>
+            </div>
 
-  <!-- Skills Section -->
-  <section id="skills" class="container">
-    <h2>Skills</h2>
-    <ul>
-      <li><strong>Programming Languages:</strong> Python, SQL, HTML, CSS</li>
-      <li><strong>Machine Learning Frameworks:</strong> TensorFlow, Scikit-learn, Keras</li>
-      <li><strong>Tools & Technologies:</strong> Jupyter, Pandas, NumPy, Matplotlib</li>
-      <li><strong>Other Skills:</strong> Data Analysis, Data Visualization, Web Development (Flask, Django)</li>
-    </ul>
-  </section>
+            <div class="project-card">
+                <div class="project-status status-completed">Completed</div>
+                <h3 class="project-title">Iris Flower Classification</h3>
+                <p class="project-description">
+                    Implementation of a classification model using the Iris dataset to predict flower species. 
+                    Demonstrates fundamental classification techniques and model evaluation methods.
+                </p>
+                <div class="project-tech">
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">Scikit-Learn</span>
+                    <span class="tech-tag">Machine Learning</span>
+                    <span class="tech-tag">Classification</span>
+                </div>
+                <a href="https://github.com/sayan14banerjee/iris_flower_classification" class="btn btn-secondary" target="_blank">
+                    <i class="fab fa-github"></i> View Code
+                </a>
+            </div>
+        </div>
+    </section>
 
-  <!-- Education Section -->
-  <section id="education" class="container">
-    <h2>Education</h2>
-    <ul>
-      <li><strong>Master of Computer Applications</strong> - University of North Bengal (2023 - Present)</li>
-      <li><strong>Bachelor of Science in Computer Science</strong> - Mankar College, University of Burdwan (2020 - 2023)</li>
-    </ul>
-  </section>
+    <!-- Education Section -->
+    <section id="education" class="section">
+        <h2 class="section-title">Education</h2>
+        <div class="education-item">
+            <div class="experience-header">
+                <div>
+                    <div class="experience-title">Master of Computer Applications (MCA)</div>
+                    <div class="experience-company">University of North Bengal</div>
+                </div>
+                <div class="experience-date">2023 – Present</div>
+            </div>
+            <p>Currently pursuing advanced studies in computer applications with focus on machine learning, data structures, algorithms, and software development.</p>
+        </div>
+        <div class="education-item">
+            <div class="experience-header">
+                <div>
+                    <div class="experience-title">Bachelor of Science in Computer Science</div>
+                    <div class="experience-company">University of Burdwan</div>
+                </div>
+                <div class="experience-date">2020 – 2023</div>
+            </div>
+            <p><strong>CGPA: 9.14</strong> - Graduated with distinction, strong foundation in computer science fundamentals, programming, and mathematics.</p>
+        </div>
 
-  <!-- Certificates Section -->
-  <section id="certificates" class="container">
-    <h2>Certificates</h2>
-    <ul>
-      <li><strong>Machine Learning Fundamentals</strong> - Coursera (2023)</li>
-      <li><strong>Deep Learning Specialization</strong> - [Institution Name] (2024)</li>
-    </ul>
-  </section>
-
-  <!-- Contact Section -->
-  <section id="contact" class="container">
-    <h2>Contact</h2>
-    <p>Feel free to reach out to me for collaborations or inquiries!</p>
-    <ul>
-      <li><strong>Email:</strong> banerjeesayan554@gmail.com</li>
-      <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/sayan14banerjee/">linkedin.com/in/sayan14banerjee</a></li>
-      <li><strong>github:</strong> <a href="https://github.com/sayan14banerjee">github.com/sayan14banerjee</a></li>
-    </ul>
-  </section>
-
-  <!-- Footer Section -->
-  <footer>
-    <p>&copy; 2024 Sayan Banerjee. All Rights Reserved.</p>
-  </footer>
-
-</body>
-</html>
+        <h3 style="color: var(--primary-color); margin: 3rem 0 2rem 0; font-size: 1.8rem;">Certifications</h3>
+        <div class="cert-grid">
+            <div class="cert-item">
+                <h4>Prompt Design in Vertex AI Skill Badge</h4>
+                <p>Google (2025)</p>
+            </div>
+            <div class="cert-item">
+                <h4>ML with Python</h4>
+                <p>CognitiveClass (IBM) (2025)</p>
+            </div>
+            <div class="cert-item">
+                <h4>Data Analysis with Python</h4>
+                <p>IBM (2024)</p>
+            </div>
+            <div class="cert-item">
+                <h4>Cloud IoT Edge ML</h4>
+                <p>NPTEL, IIT Kanpur (2024)</p>
+            </div>
+            <div class="cert-item">
+                <h4>Python 101 for Data Science</h4>
+                <p>CognitiveClass (IBM) (2022)</p>
+            </div>
+            <div class="cert-item">
+                <h4>Back-End Web Development using JavaScript and Node.js</h4>
+                <p>Google Developer Student Clubs (2022)</p>
+            </div>
+        </div>
+    </section
