@@ -1,0 +1,75 @@
+.availability-section {
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, transparent 100%);
+  padding: 6rem 2rem;
+}
+
+.availability-content {
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.availability-description {
+  font-size: 1.1rem;
+  color: var(--color-text-secondary);
+  line-height: 1.8;
+  margin-bottom: 3rem;
+}
+
+.opportunities-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.opportunity-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: rgba(59, 130, 246, 0.05);
+  padding: 1.5rem;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border);
+  transition: all 0.3s ease;
+}
+
+.opportunity-item:hover {
+  background: rgba(59, 130, 246, 0.1);
+  border-color: var(--color-accent);
+  transform: translateY(-4px);
+}
+
+.check-icon {
+  color: var(--color-accent);
+  flex-shrink: 0;
+}
+
+.opportunity-item span {
+  color: var(--color-text-secondary);
+  font-weight: 500;
+  text-align: left;
+}
+
+.availability-cta {
+  padding-top: 2rem;
+  border-top: 1px solid var(--color-border);
+}
+
+.availability-label {
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+@media (max-width: 568px) {
+  .opportunities-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .opportunity-item {
+    padding: 1rem;
+  }
+}
