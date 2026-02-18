@@ -60,8 +60,14 @@ const skills = [
 
         {/* Download Button */}
         <div className="resume-header">
-          <a href="https://drive.google.com/file/d/1YQyKVt7ql_wp_uUX0de6OlrBGDR4Io7N/view?usp=sharing" className="download-btn">
+          <a 
+            href="https://drive.google.com/uc?export=download&id=1YQyKVt7ql_wp_uUX0de6OlrBGDR4Io7N"
+            className="download-btn"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <span>Download Resume</span>
+          </a>
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
               <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
               <polyline points="7 10 12 15 17 10" />
