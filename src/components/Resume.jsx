@@ -7,7 +7,7 @@ export default function Resume() {
     title: 'Backend Developer Intern',
     company: 'Simpsoft Solutions Pvt. Ltd.',
     period: 'Mar 2025 – Sep 2025',
-    description: 'Built and maintained production-grade REST APIs using Node.js and AWS Lambda. Resolved 30+ production bugs, improved API reliability and response time, and implemented secure authentication with RBAC and IAM-based access control. Worked with API Gateway, DynamoDB, and serverless architectures.Worked in production serverless AWS environment handling real user traffic.'
+    description: 'Built and maintained production-grade REST APIs using Node.js and AWS Lambda. Resolved 30+ production bugs, improved API reliability and response time, and implemented secure authentication with RBAC and IAM-based access control. Worked with API Gateway, DynamoDB, and serverless architectures.'
   },
   {
     title: 'Production Associate',
@@ -60,19 +60,9 @@ const skills = [
 
         {/* Download Button */}
         <div className="resume-header">
-          <a 
-            href="https://drive.google.com/uc?export=download&id=1YQyKVt7ql_wp_uUX0de6OlrBGDR4Io7N"
-            className="download-btn"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          <a href="https://drive.google.com/file/d/1YQyKVt7ql_wp_uUX0de6OlrBGDR4Io7N/view?usp=sharing" className="download-btn">
             <span>Download Resume</span>
-          </a>
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-              <polyline points="7 10 12 15 17 10" />
-              <line x1="12" y1="15" x2="12" y2="3" />
-            </svg>
+            <span>Download Resume</span>
           </a>
         </div>
 
@@ -127,5 +117,5 @@ const skills = [
         </div>
       </div>
     </section>
-  );
+  ); 
 }
