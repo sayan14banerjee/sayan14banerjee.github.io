@@ -24,13 +24,13 @@
 .stats-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 1.5rem;
+  gap: .7rem;
 }
 
 .stat-card {
   background: rgba(59, 130, 246, 0.1);
   border: 1px solid var(--color-border);
-  padding: 2rem;
+  padding: .8rem;
   border-radius: var(--radius-lg);
   text-align: center;
   transition: all 0.3s ease;

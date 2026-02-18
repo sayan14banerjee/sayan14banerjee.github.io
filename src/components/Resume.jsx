@@ -7,7 +7,7 @@ export default function Resume() {
     title: 'Backend Developer Intern',
     company: 'Simpsoft Solutions Pvt. Ltd.',
     period: 'Mar 2025 – Sep 2025',
-    description: 'Built and maintained production-grade REST APIs using Node.js and AWS Lambda. Resolved 30+ production bugs, improved API reliability and response time, and implemented secure authentication with RBAC and IAM-based access control. Worked with API Gateway, DynamoDB, and serverless architectures.'
+    description: 'Built and maintained production-grade REST APIs using Node.js and AWS Lambda. Resolved 30+ production bugs, improved API reliability and response time, and implemented secure authentication with RBAC and IAM-based access control. Worked with API Gateway, DynamoDB, and serverless architectures.Worked in production serverless AWS environment handling real user traffic.'
   },
   {
     title: 'Production Associate',

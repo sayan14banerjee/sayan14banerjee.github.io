@@ -90,6 +90,30 @@
   font-size: 0.95rem;
 }
 
+.project-type {
+  font-size: 0.85rem;
+  color: var(--color-accent);
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.project-link {
+  display: inline-flex;
+  color: var(--color-accent);
+  background-color: rgba(59, 130, 246, 0.1);
+  align-items: center;
+  justify-content: center;
+  padding: 0.6rem 1.2rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.8rem;
+  font-weight: 500;
+  font-family: 'JetBrains Mono', monospace;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border: 1px solid var(--color-border);
+  cursor: pointer;
+}
+
 .tech-stack {
   display: flex;
   flex-wrap: wrap;

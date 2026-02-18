@@ -9,30 +9,31 @@ export default function About() {
         <div className="about-content">
           <div className="about-text">
             <p>
-              I'm a backend engineer and AI enthusiast with a passion for building scalable, production-ready systems. 
-              My expertise spans from designing robust REST APIs and microservices to implementing AI-driven solutions that solve real-world problems.
+              I'm a Backend & AI Engineer focused on building scalable, secure, and cloud-native systems using Python, Node.js, and AWS. 
+              I design production-grade REST APIs with JWT authentication, role-based access control, and optimized database models.
             </p>
             <p>
-              I specialize in clean architecture, database optimization, and deploying applications on cloud infrastructure. 
-              I believe in writing maintainable code, following best practices, and creating systems that can scale with your business needs.
+              My experience includes developing serverless backend architectures using AWS Lambda, API Gateway, and DynamoDB, 
+              along with integrating Generative AI capabilities such as LLM APIs, vector search (FAISS), and RAG pipelines into real-world applications.
             </p>
             <p>
-              With experience in multiple backend frameworks, cloud platforms, and machine learning implementations, I'm equipped to handle complex technical challenges and deliver solutions that businesses can rely on.
+              I enjoy architecting multi-tenant SaaS systems, optimizing performance, and building intelligent backend systems 
+              that combine clean architecture with AI-driven automation.
             </p>
           </div>
 
           <div className="stats-grid">
             <div className="stat-card">
               <div className="stat-number">6+</div>
-              <div className="stat-label">Months Experience</div>
+              <div className="stat-label">Months Production Experience</div>
             </div>
             <div className="stat-card">
-              <div className="stat-number">10+</div>
-              <div className="stat-label">Projects Completed</div>
+              <div className="stat-number">60+</div>
+              <div className="stat-label">APIs Designed & Implemented</div>
             </div>
             <div className="stat-card">
-              <div className="stat-number">15+</div>
-              <div className="stat-label">Technologies</div>
+              <div className="stat-number">8+</div>
+              <div className="stat-label">AI & Backend Projects</div>
             </div>
           </div>
         </div>

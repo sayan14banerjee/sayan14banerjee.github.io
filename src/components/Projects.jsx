@@ -3,43 +3,56 @@ import './Projects.css'
 
 const projects = [
   {
-    title: 'Aura Workspace – Smart Workspace Management System',
-    description: 'Full-stack smart workspace management platform designed to streamline team collaboration, task organization, and project tracking. Features secure authentication, dynamic dashboards, and scalable architecture to support real-time data management and future AI-driven workspace automation.',
-    technologies: ['React', 'Tailwind CSS', 'JavaScript', 'FastAPI', 'MongoDB', 'JWT Auth', 'REST API'],
-    status: 'in progress'
+    title: 'Aura Workspace – Smart Workspace Management Platform',
+    description: 'Architecting a scalable multi-tenant SaaS platform for workspace collaboration and project management. Implementing secure JWT authentication, role-based access control, and 20+ RESTful APIs with optimized MongoDB schemas. Designed for real-time workflows and future AI-powered automation pipelines.',
+    technologies: ['React', 'Tailwind CSS', 'FastAPI', 'MongoDB', 'JWT', 'REST API'],
+    status: 'progress',
+    type: 'Full Stack SaaS',
+    github: 'https://github.com/sayan14banerjee/aura-workspace'
+  },
+  {
+    title: 'Smart PDF Chatbot – AI Semantic Search System',
+    description: 'Built an AI-powered document question-answering system using vector embeddings and FAISS indexing. Implemented intelligent chunking, similarity-based retrieval, and LLM-driven context generation to enable accurate conversational search across uploaded PDFs.',
+    technologies: ['Python', 'FastAPI', 'LangChain', 'FAISS', 'LLM APIs'],
+    status: 'completed',
+    type: 'AI / LLM System',
+    github: 'https://github.com/sayan14banerjee/Smart_PDF_Chatbot'
+  },
+  {
+    title: 'AI Software Developer Agent – Autonomous Code Generation System',
+    description: 'Designed a multi-agent AI workflow that transforms natural language requirements into structured software projects. Implemented planner, architect, and coder agents using state-driven LLM orchestration to automate end-to-end code generation.',
+    technologies: ['Python', 'LangGraph', 'Groq API', 'Pydantic', 'AI Agents', 'ReAct Pattern'],
+    status: 'completed',
+    type: 'AI Agent System',
+    github: 'https://github.com/sayan14banerjee/AI_Software_developer_model'
   },
   {
     title: 'StreamSphere – Scalable Video & Microblogging Backend',
-    description: 'Production-ready backend platform combining video publishing, social microblogging, and real-time interaction features. Implemented secure authentication, subscription systems, tweet feeds, and optimized database aggregation pipelines using a scalable REST API architecture.',
-    technologies: ['Node.js', 'Express.js', 'MongoDB', 'Mongoose', 'JWT', 'Aggregation Pipeline', 'REST API'],
-    status: 'ongoing'
+    description: 'Developed a production-style backend system supporting video publishing, subscriptions, and social microblogging features. Designed 25+ secure REST APIs with JWT authentication, aggregation-based feed generation, and optimized MongoDB queries for efficient data retrieval.',
+    technologies: ['Node.js', 'Express.js', 'MongoDB', 'Mongoose', 'JWT', 'Aggregation Pipeline'],
+    status: 'progress',
+    type: 'Backend System',
+    github: 'https://github.com/sayan14banerjee/backend_project'
   },
   {
     title: 'Smart Expense Tracker Platform',
-    description: 'Backend-driven financial management system built using FastAPI and MongoDB. Features secure JWT authentication, structured Pydantic models, asynchronous API endpoints, and optimized database queries for managing user transactions and expense categorization.',
-    technologies: ['FastAPI', 'Python', 'MongoDB', 'Pydantic', 'JWT', 'Async APIs', 'React'],
-    status: 'completed', LiveDemo: "https://expense-tracker-jhfa.onrender.com/"
-  },
-  {
-  title: 'Smart PDF Chatbot with Semantic Search',
-  description: 'AI-driven chatbot that enables interactive Q&A over PDF documents using embeddings and vector search. Users can upload one or more PDFs and query their content naturally. Built with a modular architecture featuring PDF parsing, text embedding, vector storage, and a conversational interface.',
-  technologies: ['Python', 'LangChain', 'FAISS', 'OpenAI API', 'PDF Parsing', 'Vector Search', 'FastAPI'],
-  status: 'completed'
-  },
-  {
-     title: 'AI Software Developer Agent',
-    description: 'A multi-agent AI system that automatically plans, architects, and generates complete software projects from natural language descriptions. Utilizes advanced large language models and an agent-based architecture to break down user requirements into project plans, implementation tasks, and full working code.',
-    technologies: ['Python', 'LangGraph', 'Groq API', 'Pydantic', 'AI Agents', 'ReAct Pattern', 'CLI'],
-    status: 'completed'
+    description: 'Built a FastAPI-powered financial management backend with 15+ secure REST endpoints. Implemented async processing, structured Pydantic schemas, and optimized database indexing to improve response performance and data reliability.',
+    technologies: ['FastAPI', 'Python', 'MongoDB', 'Pydantic', 'JWT', 'Docker'],
+    status: 'completed',
+    type: 'Full Stack Application',
+    LiveDemo: 'https://expense-tracker-jhfa.onrender.com/',
+    github: 'https://github.com/sayan14banerjee/Expense-Tracker'
   },
   {
     title: 'Movie Recommendation System',
-    description: 'Content-based movie recommendation engine that processes movie metadata (descriptions, genres, cast, crew) using NLP and machine learning to provide personalized movie suggestions. Built using Python with text embeddings and similarity scoring techniques on the TMDB 5000 Movie Dataset.',
-    technologies: ['Python', 'NumPy', 'Pandas', 'scikit-learn', 'NLTK', 'Jupyter Notebook'],
-    status: 'completed'
-  },
+    description: 'Implemented a content-based recommendation engine using NLP vectorization and cosine similarity scoring. Processed 5,000+ movie records from the TMDB dataset to generate personalized recommendation results using machine learning techniques.',
+    technologies: ['Python', 'Pandas', 'NumPy', 'Scikit-learn', 'NLTK'],
+    status: 'completed',
+    type: 'Machine Learning',
+    github: 'https://github.com/sayan14banerjee/movie-Recommendation-System'
+  }
+];
 
-]
 
 export default function Projects() {
   return (
@@ -57,10 +70,24 @@ export default function Projects() {
                 </span>
               </div>
               <p className="project-description">{project.description}</p>
+              <p className="project-type">{project.type}</p>
               <div className="tech-stack">
                 {project.technologies.map((tech, i) => (
                   <span key={i} className="tech-tag">{tech}</span>
                 ))}
+              </div>
+              <br />
+              <div className="project-links">
+                {project.LiveDemo && (
+                  <a href={project.LiveDemo} target="_blank" rel="noopener noreferrer" className="project-link">
+                    Live Demo <ExternalLink size={16} />
+                  </a>
+                )}
+                {project.github && (
+                  <a href={project.github} target="_blank" rel="noopener noreferrer" className="project-link">
+                    GitHub <ExternalLink size={16} />
+                  </a>
+                )}
               </div>
             </div>
           ))}

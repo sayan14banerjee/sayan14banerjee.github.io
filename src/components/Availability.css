@@ -18,8 +18,8 @@
 
 .opportunities-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(4, 1fr);  /* Force 4 items */
+  gap: 1rem;
   margin-bottom: 3rem;
 }
 
@@ -67,6 +67,21 @@
   .opportunities-grid {
     grid-template-columns: 1fr;
     gap: 1rem;
+  }
+
+  .opportunity-item {
+    padding: 1rem;
+  }
+}
+@media (max-width: 992px) {
+  .opportunities-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 per row on tablet */
+  }
+}
+
+@media (max-width: 568px) {
+  .opportunities-grid {
+    grid-template-columns: 1fr; /* 1 per row on mobile */
   }
 
   .opportunity-item {

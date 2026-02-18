@@ -1,5 +1,7 @@
 import { ChevronDown } from 'lucide-react'
 import './Hero.css'
+import { Github, Linkedin } from 'lucide-react'
+
 
 export default function Hero() {
   const scrollToSection = (id) => {
@@ -11,31 +13,57 @@ export default function Hero() {
 
   return (
     <section className="hero">
+      <div className="hero-wrapper">
       <div className="hero-content">
         <h1 className="hero-title">Sayan Banerjee</h1>
-        <h2 className="hero-subtitle">AI & Backend Developer</h2>
-        <p className="hero-subtitle">Building Scalable Digital Solutions</p>
-        <p className="hero-description">
-          Specialized in backend systems, cloud architecture, and AI-powered applications for startups and growing businesses.
-        </p>
         
+        <h2 className="hero-subtitle">
+          Backend & AI Engineer
+        </h2>
+
+        <p className="hero-tagline">
+          Building scalable cloud-native systems and intelligent applications.
+        </p>
+
+        <p className="hero-description">
+          I design production-grade REST APIs, serverless AWS architectures, 
+          and AI-powered systems using Python, Node.js, and modern cloud technologies. 
+          Focused on secure authentication, multi-tenant SaaS design, and LLM integration.
+        </p>
+
+        <div className="hero-socials">
+          <a href="https://github.com/sayan14banerjee" target="_blank">
+            <Github size={26} />
+          </a>
+
+          <a href="https://linkedin.com/in/sayan14banerjee" target="_blank">
+            <Linkedin size={26} />
+          </a>
+        </div>
+        <br />
         <div className="cta-buttons">
-          <button className="btn btn-primary" onClick={() => scrollToSection('projects')}>
+          <button 
+            className="btn btn-primary" 
+            onClick={() => scrollToSection('projects')}
+          >
             View Projects
           </button>
-          <button className="btn btn-secondary" onClick={() => scrollToSection('contact')}>
-            Contact Me
+
+          <button 
+            className="btn btn-secondary" 
+            onClick={() => scrollToSection('contact')}
+          >
+            Let's Connect
           </button>
         </div>
+        </div>
+        <div className="hero-image">
+      <img src="../../public/portfolio.image.png" alt="Sayan Banerjee" />
+    </div>
       </div>
 
-      <button 
-        className="scroll-indicator" 
-        onClick={() => scrollToSection('about')}
-        aria-label="Scroll to about section"
-      >
-        <ChevronDown size={24} />
-      </button>
+      
+
     </section>
   )
 }

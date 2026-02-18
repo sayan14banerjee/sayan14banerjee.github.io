@@ -18,13 +18,11 @@
   align-items: center;
 }
 
-.logo {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: var(--color-accent);
-  cursor: pointer;
-}
+.logo img {
+  width: 40px;
+  height: 40px;
+} 
+
 
 .nav {
   display: flex;

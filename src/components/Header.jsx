@@ -16,7 +16,7 @@ export default function Header() {
   return (
     <header className="header">
       <div className="header-container">
-        <div className="logo">SB</div>
+        <div className='logo'><img src="../../public/logo.png" alt="Sayan Banerjee Logo" /></div>
         
         <nav className={`nav ${isOpen ? 'active' : ''}`}>
           <button onClick={() => scrollToSection('about')} className="nav-link">About</button>

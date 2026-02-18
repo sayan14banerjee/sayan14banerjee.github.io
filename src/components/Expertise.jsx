@@ -3,26 +3,51 @@ import './Expertise.css'
 
 const expertiseAreas = [
   {
-    title: 'Backend Development',
+    title: 'Backend Engineering',
     icon: Database,
-    skills: ['REST APIs', 'Authentication Systems', 'Database Design', 'Scalable Architecture']
+    skills: [
+      'REST API Design (FastAPI & Express)',
+      'JWT Authentication & RBAC',
+      'Async Processing',
+      'MongoDB & DynamoDB Modeling',
+      'Production-Grade API Architecture'
+    ]
   },
   {
-    title: 'Cloud & Deployment',
+    title: 'Cloud & Serverless Systems',
     icon: Cloud,
-    skills: ['AWS', 'Serverless', 'Deployment Pipelines', 'Performance Optimization']
+    skills: [
+      'AWS Lambda & API Gateway',
+      'DynamoDB & S3 Integration',
+      'Serverless Architecture Design',
+      'Secure IAM Access Control',
+      'Dockerized Deployments'
+    ]
   },
   {
-    title: 'AI & Machine Learning',
+    title: 'AI & Generative AI Systems',
     icon: Brain,
-    skills: ['NLP Systems', 'RAG', 'Chatbot Development', 'Computer Vision', 'Data-Driven Systems']
+    skills: [
+      'LLM API Integration',
+      'Vector Databases (FAISS)',
+      'RAG Pipelines',
+      'Prompt Engineering',
+      'Semantic Search Systems'
+    ]
   },
   {
-    title: 'System Design',
+    title: 'System Architecture & Security',
     icon: Settings,
-    skills: ['Clean Architecture', 'Secure Systems', 'Code Optimization', 'Scalable Backend']
+    skills: [
+      'Multi-Tenant SaaS Design',
+      'Role-Based Access Control',
+      'Optimized Database Indexing',
+      'Scalable Data Models',
+      'Clean & Modular Architecture'
+    ]
   }
-]
+];
+
 
 export default function Expertise() {
   return (
