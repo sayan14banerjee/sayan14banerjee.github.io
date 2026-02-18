@@ -60,10 +60,14 @@ const skills = [
 
         {/* Download Button */}
         <div className="resume-header">
-          <a href="https://drive.google.com/file/d/1YQyKVt7ql_wp_uUX0de6OlrBGDR4Io7N/view?usp=sharing" className="download-btn">
-            <span>Download Resume</span>
-            <span>Download Resume</span>
-          </a>
+          <a 
+  href="https://drive.google.com/uc?export=download&id=1YQyKVt7ql_wp_uUX0de6OlrBGDR4Io7N"
+  className="download-btn"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  <span>Download Resume</span>
+</a>
         </div>
 
         {/* Experience */}
