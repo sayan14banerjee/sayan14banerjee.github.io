@@ -26,9 +26,7 @@ export default function Hero() {
         </p>
 
         <p className="hero-description">
-          I design production-grade REST APIs, serverless AWS architectures, 
-          and AI-powered systems using Python, Node.js, and modern cloud technologies. 
-          Focused on secure authentication, multi-tenant SaaS design, and LLM integration.
+          I design production-grade REST APIs, serverless AWS systems, and AI-powered applications using Python and Node.js.
         </p>
 
         <div className="hero-socials">

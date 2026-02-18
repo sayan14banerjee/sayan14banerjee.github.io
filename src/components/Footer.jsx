@@ -35,8 +35,7 @@ export default function Footer() {
         <div className="footer-divider"></div>
 
         <div className="footer-bottom">
-          <p>© {currentYear} Sayan Banerjee. All rights reserved.</p>
-          <p className="footer-credit">Crafted with care for quality code and design</p>
+          <p>© {currentYear} Sayan Banerjee — Built with React & deployed on GitHub Pages</p>
         </div>
       </div>
     </footer>
