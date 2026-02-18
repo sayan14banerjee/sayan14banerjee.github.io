@@ -58,7 +58,7 @@ export default function Hero() {
         </div>
         </div>
         <div className="hero-image">
-      <img src="/public/portfolio.image.png" alt="Sayan Banerjee" />
+      <img href="https://github.com/sayan14banerjee/sayan14banerjee.github.io/blob/main/public/portfolio.image.png" alt="Sayan Banerjee" />
     </div>
       </div>
 
