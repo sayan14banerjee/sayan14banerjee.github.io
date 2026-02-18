@@ -23,11 +23,11 @@ export default function About() {
 
           <div className="stats-grid">
             <div className="stat-card">
-              <div className="stat-number">5+</div>
-              <div className="stat-label">Years Experience</div>
+              <div className="stat-number">6+</div>
+              <div className="stat-label">Months Experience</div>
             </div>
             <div className="stat-card">
-              <div className="stat-number">20+</div>
+              <div className="stat-number">10+</div>
               <div className="stat-label">Projects Completed</div>
             </div>
             <div className="stat-card">

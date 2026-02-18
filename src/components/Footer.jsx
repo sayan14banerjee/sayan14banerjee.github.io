@@ -27,7 +27,7 @@ export default function Footer() {
             <ul>
               <li><a href="https://linkedin.com/in/sayan-banerjee" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
               <li><a href="https://github.com/sayan14banerjee" target="_blank" rel="noopener noreferrer">GitHub</a></li>
-              <li><a href="mailto:sayan14banerjee@gmail.com">Email</a></li>
+              <li><a href="mailto:banerjeesayan554@gmail.com">Email</a></li>
             </ul>
           </div>
         </div>

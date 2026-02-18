@@ -24,6 +24,13 @@
   letter-spacing: -1px;
 }
 
+.hero h2{
+  font-size: clamp(1.5rem, 5vw, 2.5rem);
+  color: var(--color-accent);
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
 .hero-subtitle {
   font-size: clamp(1.2rem, 4vw, 1.8rem);
   color: var(--color-accent);

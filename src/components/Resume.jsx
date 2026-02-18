@@ -3,47 +3,55 @@ import './Resume.css';
 
 export default function Resume() {
   const experiences = [
-    {
-      title: 'Senior Backend Engineer',
-      company: 'Tech Startup Inc.',
-      period: '2022 - Present',
-      description: 'Lead backend architecture for microservices infrastructure, improving system performance by 40% and reducing latency.'
-    },
-    {
-      title: 'Full Stack Developer',
-      company: 'Digital Solutions Ltd.',
-      period: '2020 - 2022',
-      description: 'Developed scalable APIs and cloud solutions, managed deployment pipelines, and mentored junior developers.'
-    },
-    {
-      title: 'Software Developer',
-      company: 'StartUp Co.',
-      period: '2019 - 2020',
-      description: 'Built backend systems using Node.js and Python, integrated payment systems, and optimized database queries.'
-    }
-  ];
+  {
+    title: 'Backend Developer Intern',
+    company: 'Simpsoft Solutions Pvt. Ltd.',
+    period: 'Mar 2025 – Sep 2025',
+    description: 'Built and maintained production-grade REST APIs using Node.js and AWS Lambda. Resolved 30+ production bugs, improved API reliability and response time, and implemented secure authentication with RBAC and IAM-based access control. Worked with API Gateway, DynamoDB, and serverless architectures.'
+  },
+  {
+    title: 'Production Associate',
+    company: 'MobiSmart Card Technology Pvt. Ltd.',
+    period: 'Dec 2025 – Present',
+    description: 'Handled secure data processing within smart card personalization workflows. Ensured compliance with strict security, quality standards, and operational reliability in production environments.'
+  }
+];
+
 
   const education = [
-    {
-      degree: 'Bachelor of Technology in Computer Science',
-      institution: 'Your University',
-      year: '2019',
-      details: 'Specialized in AI & Machine Learning'
-    },
-    {
-      degree: 'Cloud Architecture Certification',
-      institution: 'AWS Training Academy',
-      year: '2021',
-      details: 'Solutions Architect Associate'
-    }
-  ];
+  {
+    degree: 'Master of Computer Applications (MCA)',
+    institution: 'University of North Bengal',
+    year: '2023 – 2025',
+    details: 'CGPA: 7.98 | Focused on Backend Development, Cloud Systems & AI Applications'
+  },
+  {
+    degree: 'B.Sc. in Computer Science',
+    institution: 'University of Burdwan',
+    year: '2020 – 2023',
+    details: 'CGPA: 9.14 | Strong foundation in Data Structures, Algorithms & Software Development'
+  }
+];
 
-  const skills = [
-    { category: 'Backend', items: ['Node.js', 'Python', 'Java', 'Go'] },
-    { category: 'Databases', items: ['PostgreSQL', 'MongoDB', 'Redis', 'DynamoDB'] },
-    { category: 'Cloud', items: ['AWS', 'GCP', 'Docker', 'Kubernetes'] },
-    { category: 'AI/ML', items: ['TensorFlow', 'PyTorch', 'OpenAI API', 'LangChain'] }
-  ];
+const skills = [
+  { 
+    category: 'Backend Development', 
+    items: ['Python', 'Node.js', 'FastAPI', 'Flask', 'REST APIs', 'JWT', 'RBAC'] 
+  },
+  { 
+    category: 'Databases', 
+    items: ['DynamoDB', 'MongoDB', 'MySQL', 'FAISS'] 
+  },
+  { 
+    category: 'Cloud & DevOps', 
+    items: ['AWS Lambda', 'API Gateway', 'S3', 'Docker', 'Terraform'] 
+  },
+  { 
+    category: 'AI & Generative AI', 
+    items: ['LLM APIs', 'AI Inference Pipelines', 'Prompt Engineering', 'Scikit-learn'] 
+  }
+];
+
 
   return (
     <section className="resume-section">
@@ -52,7 +60,7 @@ export default function Resume() {
 
         {/* Download Button */}
         <div className="resume-header">
-          <a href="#" className="download-btn">
+          <a href="https://drive.google.com/file/d/1YQyKVt7ql_wp_uUX0de6OlrBGDR4Io7N/view?usp=sharing" className="download-btn">
             <span>Download Resume</span>
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
               <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />

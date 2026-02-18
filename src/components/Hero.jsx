@@ -12,7 +12,8 @@ export default function Hero() {
   return (
     <section className="hero">
       <div className="hero-content">
-        <h1>AI & Backend Developer</h1>
+        <h1 className="hero-title">Sayan Banerjee</h1>
+        <h2 className="hero-subtitle">AI & Backend Developer</h2>
         <p className="hero-subtitle">Building Scalable Digital Solutions</p>
         <p className="hero-description">
           Specialized in backend systems, cloud architecture, and AI-powered applications for startups and growing businesses.

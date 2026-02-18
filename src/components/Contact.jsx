@@ -5,8 +5,8 @@ const contactLinks = [
   {
     icon: Mail,
     label: 'Email',
-    value: 'sayan14banerjee@gmail.com',
-    href: 'mailto:sayan14banerjee@gmail.com'
+    value: 'banerjeesayan554@gmail.com',
+    href: 'mailto:banerjeesayan554@gmail.com'
   },
   {
     icon: Linkedin,
@@ -23,8 +23,8 @@ const contactLinks = [
   {
     icon: MessageCircle,
     label: 'WhatsApp',
-    value: '+91 XXXXXXXXXX',
-    href: 'https://wa.me/91XXXXXXXXXX'
+    value: '+91 9641706868',
+    href: 'https://wa.me/919641706868'
   }
 ]
 
@@ -61,7 +61,7 @@ export default function Contact() {
         </div>
 
         <div className="contact-cta">
-          <a href="mailto:sayan14banerjee@gmail.com" className="btn btn-primary">
+          <a href="mailto:banerjeesayan554@gmail.com" className="btn btn-primary">
             Send me an Email
           </a>
         </div>

@@ -15,7 +15,7 @@ const expertiseAreas = [
   {
     title: 'AI & Machine Learning',
     icon: Brain,
-    skills: ['NLP Systems', 'Chatbot Development', 'Computer Vision', 'Data-Driven Systems']
+    skills: ['NLP Systems', 'RAG', 'Chatbot Development', 'Computer Vision', 'Data-Driven Systems']
   },
   {
     title: 'System Design',

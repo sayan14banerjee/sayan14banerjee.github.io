@@ -3,41 +3,42 @@ import './Projects.css'
 
 const projects = [
   {
+    title: 'Aura Workspace – Smart Workspace Management System',
+    description: 'Full-stack smart workspace management platform designed to streamline team collaboration, task organization, and project tracking. Features secure authentication, dynamic dashboards, and scalable architecture to support real-time data management and future AI-driven workspace automation.',
+    technologies: ['React', 'Tailwind CSS', 'JavaScript', 'FastAPI', 'MongoDB', 'JWT Auth', 'REST API'],
+    status: 'in progress'
+  },
+  {
+    title: 'StreamSphere – Scalable Video & Microblogging Backend',
+    description: 'Production-ready backend platform combining video publishing, social microblogging, and real-time interaction features. Implemented secure authentication, subscription systems, tweet feeds, and optimized database aggregation pipelines using a scalable REST API architecture.',
+    technologies: ['Node.js', 'Express.js', 'MongoDB', 'Mongoose', 'JWT', 'Aggregation Pipeline', 'REST API'],
+    status: 'ongoing'
+  },
+  {
     title: 'Smart Expense Tracker Platform',
-    description: 'Full-stack financial tracking system with secure authentication and real-time data management using Node.js and MongoDB. Built with scalable backend architecture and optimized database queries.',
-    technologies: ['Node.js', 'MongoDB', 'React', 'JWT Auth'],
+    description: 'Backend-driven financial management system built using FastAPI and MongoDB. Features secure JWT authentication, structured Pydantic models, asynchronous API endpoints, and optimized database queries for managing user transactions and expense categorization.',
+    technologies: ['FastAPI', 'Python', 'MongoDB', 'Pydantic', 'JWT', 'Async APIs', 'React'],
+    status: 'completed', LiveDemo: "https://expense-tracker-jhfa.onrender.com/"
+  },
+  {
+  title: 'Smart PDF Chatbot with Semantic Search',
+  description: 'AI-driven chatbot that enables interactive Q&A over PDF documents using embeddings and vector search. Users can upload one or more PDFs and query their content naturally. Built with a modular architecture featuring PDF parsing, text embedding, vector storage, and a conversational interface.',
+  technologies: ['Python', 'LangChain', 'FAISS', 'OpenAI API', 'PDF Parsing', 'Vector Search', 'FastAPI'],
+  status: 'completed'
+  },
+  {
+     title: 'AI Software Developer Agent',
+    description: 'A multi-agent AI system that automatically plans, architects, and generates complete software projects from natural language descriptions. Utilizes advanced large language models and an agent-based architecture to break down user requirements into project plans, implementation tasks, and full working code.',
+    technologies: ['Python', 'LangGraph', 'Groq API', 'Pydantic', 'AI Agents', 'ReAct Pattern', 'CLI'],
     status: 'completed'
   },
   {
-    title: 'AI Chatbot Assistant',
-    description: 'Intelligent chatbot system leveraging NLP and machine learning models. Deployed on AWS Lambda with real-time processing and conversation memory management.',
-    technologies: ['Python', 'TensorFlow', 'AWS', 'WebSocket'],
+    title: 'Movie Recommendation System',
+    description: 'Content-based movie recommendation engine that processes movie metadata (descriptions, genres, cast, crew) using NLP and machine learning to provide personalized movie suggestions. Built using Python with text embeddings and similarity scoring techniques on the TMDB 5000 Movie Dataset.',
+    technologies: ['Python', 'NumPy', 'Pandas', 'scikit-learn', 'NLTK', 'Jupyter Notebook'],
     status: 'completed'
   },
-  {
-    title: 'Microservices Architecture Platform',
-    description: 'Enterprise-grade microservices infrastructure with containerized services, API gateways, and load balancing. Implements distributed logging and monitoring systems.',
-    technologies: ['Docker', 'Kubernetes', 'Node.js', 'PostgreSQL'],
-    status: 'completed'
-  },
-  {
-    title: 'Real-time Analytics Dashboard',
-    description: 'High-performance analytics platform processing thousands of events per second. Features real-time data visualization with WebSocket integration and serverless backend.',
-    technologies: ['React', 'Node.js', 'AWS Lambda', 'Redis'],
-    status: 'completed'
-  },
-  {
-    title: 'Cloud Infrastructure Automation',
-    description: 'Infrastructure-as-Code solutions for automated deployment and scaling. Implements CI/CD pipelines with GitHub Actions and Terraform for cloud provisioning.',
-    technologies: ['Terraform', 'AWS', 'GitHub Actions', 'Docker'],
-    status: 'completed'
-  },
-  {
-    title: 'Machine Learning API Service',
-    description: 'Production-ready ML model serving platform with REST APIs. Implements model versioning, A/B testing, and automatic scaling based on demand.',
-    technologies: ['FastAPI', 'PyTorch', 'AWS', 'MLOps'],
-    status: 'completed'
-  }
+
 ]
 
 export default function Projects() {
