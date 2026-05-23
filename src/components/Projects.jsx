@@ -3,12 +3,12 @@ import './Projects.css'
 
 const projects = [
   {
-    title: 'Aura Workspace – Smart Workspace Management Platform',
-    description: 'Architecting a scalable multi-tenant SaaS platform for workspace collaboration and project management. Implementing secure JWT authentication, role-based access control, and 20+ RESTful APIs with optimized MongoDB schemas. Designed for real-time workflows and future AI-powered automation pipelines.',
-    technologies: ['React', 'Tailwind CSS', 'FastAPI', 'MongoDB', 'JWT', 'REST API'],
-    status: 'progress',
-    type: 'Full Stack SaaS',
-    github: 'https://github.com/sayan14banerjee/aura-workspace'
+    title: 'AI Interview Simulator – AI-Powered Interview Practice Platform',
+    description: 'Built an AI interview simulator with a React frontend and FastAPI backend. Features resume-based RAG retrieval using FAISS, JWT authentication, role-based access control, LLM-generated interview questions, answer evaluation, and performance analytics.',
+    technologies: ['React', 'FastAPI', 'JWT', 'FAISS', 'LLM', 'SQLAlchemy'],
+    status: 'completed',
+    type: 'AI / SaaS Platform',
+    github: 'https://github.com/sayan14banerjee/AI-Interview-Simulator'
   },
   {
     title: 'Smart PDF Chatbot – AI Semantic Search System',
