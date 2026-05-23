@@ -61,7 +61,7 @@ const skills = [
         {/* Download Button */}
         <div className="resume-header">
           <a 
-  href="https://drive.google.com/uc?export=download&id=1YQyKVt7ql_wp_uUX0de6OlrBGDR4Io7N"
+  href="https://drive.google.com/file/d/1UkRgzrVCLAuJ7-6juik8KI828508MuF4/view?usp=sharing"
   className="download-btn"
   target="_blank"
   rel="noopener noreferrer"
