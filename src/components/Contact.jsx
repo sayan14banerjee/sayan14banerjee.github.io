@@ -1,69 +1,25 @@
-import { Mail, Linkedin, Github, MessageCircle } from 'lucide-react'
+import { ArrowDown, ArrowUpRight, Github, Linkedin, Mail } from 'lucide-react'
 import './Contact.css'
 
-const contactLinks = [
-  {
-    icon: Mail,
-    label: 'Email',
-    value: 'banerjeesayan554@gmail.com',
-    href: 'mailto:banerjeesayan554@gmail.com'
-  },
-  {
-    icon: Linkedin,
-    label: 'LinkedIn',
-    value: 'linkedin.com/in/sayan-banerjee',
-    href: 'https://linkedin.com/in/sayan-banerjee'
-  },
-  {
-    icon: Github,
-    label: 'GitHub',
-    value: 'github.com/sayan14banerjee',
-    href: 'https://github.com/sayan14banerjee'
-  },
-  {
-    icon: MessageCircle,
-    label: 'WhatsApp',
-    value: '+91 9641706868',
-    href: 'https://wa.me/919641706868'
-  }
-]
+const resume = 'https://drive.google.com/file/d/1UkRgzrVCLAuJ7-6juik8KI828508MuF4/view?usp=sharing'
 
 export default function Contact() {
   return (
-    <section id="contact" className="section contact-section">
-      <div className="container">
-        <h2 className="section-title">Let's Build Together</h2>
-        
-        <p className="contact-subtitle">
-          I'm always interested in hearing about new projects and opportunities. 
-          Feel free to reach out if you'd like to collaborate.
-        </p>
-
-        <div className="contact-grid">
-          {contactLinks.map((link, idx) => {
-            const Icon = link.icon
-            return (
-              <a 
-                key={idx} 
-                href={link.href} 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="contact-card"
-              >
-                <div className="contact-icon">
-                  <Icon size={28} />
-                </div>
-                <h3>{link.label}</h3>
-                <p>{link.value}</p>
-              </a>
-            )
-          })}
-        </div>
-
-        <div className="contact-cta">
-          <a href="mailto:banerjeesayan554@gmail.com" className="btn btn-primary">
-            Send me an Email
-          </a>
+    <section id="contact" className="alt">
+      <div className="w reveal">
+        <div className="contact-card">
+          <div className="eb">07 / CONTACT</div>
+          <h2>Let&apos;s build something<br />meaningful together.</h2>
+          <p>
+            I&apos;m open to opportunities in Backend Development, Python Engineering and AI
+            Application Development.
+          </p>
+          <div className="contact-actions">
+            <a className="btn btn-primary" href="mailto:banerjeesayan554@gmail.com"><Mail size={16} />Email Me</a>
+            <a className="btn" href="https://www.linkedin.com/in/sayan14banerjee/" target="_blank" rel="noreferrer"><Linkedin size={16} />LinkedIn <ArrowUpRight size={14} /></a>
+            <a className="btn" href="https://github.com/sayan14banerjee" target="_blank" rel="noreferrer"><Github size={16} />GitHub <ArrowUpRight size={14} /></a>
+            <a className="btn" href={resume} target="_blank" rel="noreferrer"><ArrowDown size={16} />Resume</a>
+          </div>
         </div>
       </div>
     </section>

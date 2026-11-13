@@ -1,0 +1,35 @@
+.education-timeline {
+  max-width: 760px;
+  margin-top: 40px;
+  padding-left: 32px;
+  border-left: 1px solid var(--border);
+}
+
+.education-item {
+  position: relative;
+}
+
+.education-item + .education-item {
+  margin-top: 36px;
+}
+
+.education-item::before {
+  position: absolute;
+  top: 9px;
+  left: -38px;
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 0 5px var(--bg2);
+  content: '';
+}
+
+.education-item h3 {
+  margin: 4px 0 2px;
+  font-size: 1.25rem;
+}
+
+.education-item .timeline-date + h3 {
+  margin-top: 4px;
+}

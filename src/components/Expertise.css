@@ -1,112 +1,132 @@
-.expertise-section {
-  background: var(--color-bg-primary);
-}
-
-.expertise-grid {
+.primary-skills {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
 }
 
-.expertise-card {
-  background: linear-gradient(135deg, rgba(59, 130, 246, 0.05) 0%, rgba(59, 130, 246, 0.02) 100%);
-  border: 1px solid var(--color-border);
-  padding: 2.5rem 2rem;
-  border-radius: var(--radius-lg);
-  transition: all 0.3s ease;
+.primary-skill,
+.secondary-skill {
   position: relative;
-  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--card);
+  transition: border-color .25s;
 }
 
-.expertise-card::before {
-  content: '';
+.primary-skill {
+  padding: 32px;
+}
+
+.primary-skill:hover,
+.secondary-skill:hover {
+  border-color: #3d5170;
+}
+
+.primary-skill::before {
   position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.05), transparent);
-  transition: left 0.5s ease;
-}
-
-.expertise-card:hover::before {
-  left: 100%;
-}
-
-.expertise-card:hover {
-  border-color: var(--color-accent);
-  background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(59, 130, 246, 0.05) 100%);
-  transform: translateY(-8px);
-  box-shadow: 0 15px 35px rgba(59, 130, 246, 0.15);
-}
-
-.icon-wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 60px;
-  height: 60px;
-  background: rgba(59, 130, 246, 0.2);
-  border-radius: var(--radius-md);
-  color: var(--color-accent);
-  margin-bottom: 1.5rem;
-  transition: all 0.3s ease;
-}
-
-.expertise-card:hover .icon-wrapper {
-  background: rgba(59, 130, 246, 0.3);
-  transform: scale(1.1);
-}
-
-.expertise-card h3 {
-  font-size: 1.3rem;
-  font-weight: 600;
-  color: var(--color-text-primary);
-  margin-bottom: 1.5rem;
-  letter-spacing: 0.5px;
-}
-
-.skills-list {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 0.8rem;
-}
-
-.skills-list li {
-  font-size: 0.95rem;
-  color: var(--color-text-secondary);
-  padding-left: 1.5rem;
-  position: relative;
-  transition: all 0.3s ease;
-}
-
-.skills-list li::before {
-  content: '→';
-  position: absolute;
+  top: 28px;
+  bottom: 28px;
   left: 0;
-  color: var(--color-accent);
-  font-weight: 600;
-  opacity: 0;
-  transition: all 0.3s ease;
+  width: 3px;
+  border-radius: 0 3px 3px 0;
+  background: var(--accent);
+  content: '';
 }
 
-.expertise-card:hover .skills-list li::before {
-  opacity: 1;
-  left: 5px;
+.primary-skill.ai::before {
+  background: var(--secondary);
 }
 
-.expertise-card:hover .skills-list li {
-  color: var(--color-text-primary);
-  transform: translateX(5px);
+.primary-skill small,
+.secondary-skill small {
+  color: var(--text-muted);
+  font: 500 .7rem var(--mono);
+  letter-spacing: .12em;
 }
 
-@media (max-width: 768px) {
-  .expertise-grid {
+.primary-skill h3 {
+  margin: 6px 0 20px;
+  font-size: 1.4rem;
+}
+
+.skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.skill-tags span {
+  padding: 4px 11px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--el);
+  color: var(--text-muted);
+  font-size: .78rem;
+  font-weight: 500;
+}
+
+.primary-skill .skill-tags span {
+  padding: 6px 13px;
+  font-size: .84rem;
+}
+
+.skill-tags span.used {
+  border-color: #3d5170;
+  color: var(--text);
+}
+
+.secondary-skills {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.secondary-skill {
+  padding: 20px;
+}
+
+.skill-spacer {
+  height: 12px;
+}
+
+.skill-legend {
+  display: flex;
+  gap: 20px;
+  margin-top: 24px;
+  color: var(--text-secondary);
+  font-size: .8rem;
+}
+
+.skill-legend span::before {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin-right: 8px;
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  background: var(--el);
+  content: '';
+}
+
+.skill-legend .used::before {
+  border-color: var(--accent);
+  background: rgba(110, 168, 254, .3);
+}
+
+@media (max-width: 1000px) {
+  .secondary-skills {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .primary-skills,
+  .secondary-skills {
     grid-template-columns: 1fr;
   }
 
-  .expertise-card {
-    padding: 2rem;
+  .primary-skill {
+    padding: 24px;
   }
 }

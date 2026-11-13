@@ -1,4 +1,137 @@
-.app {
-  width: 100%;
+#root {
   min-height: 100vh;
+}
+
+section {
+  padding: 112px 0;
+}
+
+.w {
+  width: min(1180px, calc(100% - 48px));
+  margin-inline: auto;
+}
+
+.alt {
+  background: var(--bg2);
+}
+
+.eb {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+  color: var(--accent);
+  font: 500 .75rem var(--mono);
+  letter-spacing: .12em;
+}
+
+.eb::after {
+  width: 48px;
+  height: 1px;
+  background: var(--border);
+  content: '';
+}
+
+h2 {
+  margin: 0 0 16px;
+  font-size: clamp(1.9rem, 4vw, 2.8rem);
+  font-weight: 800;
+  letter-spacing: -.03em;
+  line-height: 1.15;
+}
+
+.sub {
+  max-width: 620px;
+  margin: 0 0 48px;
+  color: var(--text-secondary);
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 11px 22px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: transparent;
+  color: var(--text);
+  font: 600 .9rem Manrope, system-ui, sans-serif;
+  transition: .2s;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.btn-primary {
+  border-color: var(--accent);
+  background: var(--accent);
+  color: #0b1220;
+}
+
+.btn-primary:hover {
+  border-color: #8bbaff;
+  background: #8bbaff;
+  color: #0b1220;
+}
+
+.btn-small {
+  padding: 6px 14px;
+  font-size: .82rem;
+}
+
+.text-link {
+  color: var(--text-secondary);
+  font-size: .92rem;
+  font-weight: 600;
+  transition: color .2s;
+}
+
+.text-link:hover {
+  color: var(--accent);
+}
+
+.reveal {
+  opacity: 1;
+  transform: none;
+}
+
+.js .reveal {
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity .6s, transform .6s;
+}
+
+.js .reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+@media (max-width: 1000px) {
+  section {
+    padding: 88px 0;
+  }
+}
+
+@media (max-width: 640px) {
+  section {
+    padding: 72px 0;
+  }
+
+  .w {
+    width: calc(100% - 40px);
+  }
+
+  .sub {
+    margin-bottom: 32px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .js .reveal {
+    opacity: 1;
+    transform: none;
+  }
 }

@@ -1,41 +1,42 @@
+import SectionHeading from './SectionHeading.jsx'
 import './About.css'
 
 export default function About() {
   return (
-    <section id="about" className="section about-section">
-      <div className="container">
-        <h2 className="section-title">About Me</h2>
-        
-        <div className="about-content">
-          <div className="about-text">
+    <section id="about" className="about-section alt">
+      <div className="w reveal">
+        <SectionHeading eyebrow="01 / ABOUT" title="Engineering with curiosity." />
+        <div className="about-grid">
+          <div>
             <p>
-              I'm a Backend & AI Engineer focused on building scalable, secure, and cloud-native systems using Python, Node.js, and AWS. 
-              I design production-grade REST APIs with JWT authentication, role-based access control, and optimized database models.
+              I am a software developer with an academic background in Computer Science, currently
+              pursuing my Master of Computer Applications at the University of North Bengal.
             </p>
             <p>
-              My experience includes developing serverless backend architectures using AWS Lambda, API Gateway, and DynamoDB, 
-              along with integrating Generative AI capabilities such as LLM APIs, vector search (FAISS), and RAG pipelines into real-world applications.
+              My primary interest lies in backend development and building AI-powered applications.
+              I have worked with Python, FastAPI, Django, Node.js, databases and REST APIs, while
+              exploring LLM integrations, semantic search, vector databases, Retrieval-Augmented
+              Generation and AI agent workflows.
             </p>
             <p>
-              I enjoy architecting multi-tenant SaaS systems, optimizing performance, and building intelligent backend systems 
-              that combine clean architecture with AI-driven automation.
+              I enjoy taking ideas from concept to implementation, understanding system architecture
+              and solving practical engineering problems.
+            </p>
+            <p>
+              Currently, I am developing NEXORA, an AI-powered workspace, while strengthening my
+              backend engineering skills.
             </p>
           </div>
-
-          <div className="stats-grid">
-            <div className="stat-card">
-              <div className="stat-number">6+</div>
-              <div className="stat-label">Months Production Experience</div>
-            </div>
-            <div className="stat-card">
-              <div className="stat-number">60+</div>
-              <div className="stat-label">APIs Designed & Implemented</div>
-            </div>
-            <div className="stat-card">
-              <div className="stat-number">8+</div>
-              <div className="stat-label">AI & Backend Projects</div>
-            </div>
-          </div>
+          <aside className="focus-panel">
+            <h3>CURRENT FOCUS</h3>
+            <strong>Backend systems and applied AI.</strong>
+            <p>Building useful software with thoughtful architecture and clear interfaces.</p>
+            <dl>
+              <dt>language</dt><dd>Python</dd>
+              <dt>framework</dt><dd>FastAPI</dd>
+              <dt>building</dt><dd>NEXORA</dd>
+            </dl>
+          </aside>
         </div>
       </div>
     </section>

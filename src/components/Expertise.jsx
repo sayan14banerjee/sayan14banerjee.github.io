@@ -1,77 +1,72 @@
-import { Database, Cloud, Brain, Settings } from 'lucide-react'
+import SectionHeading from './SectionHeading.jsx'
 import './Expertise.css'
 
-const expertiseAreas = [
+const primarySkills = [
   {
-    title: 'Backend Engineering',
-    icon: Database,
+    label: 'BACKEND ENGINEERING',
+    title: 'Server-side systems & APIs',
+    className: '',
     skills: [
-      'REST API Design (FastAPI & Express)',
-      'JWT Authentication & RBAC',
-      'Async Processing',
-      'MongoDB & DynamoDB Modeling',
-      'Production-Grade API Architecture'
-    ]
+      ['Python', true], ['FastAPI', true], ['Django', false], ['REST APIs', true],
+      ['Node.js', false], ['Express.js', false], ['Authentication', true], ['Databases', true],
+    ],
   },
   {
-    title: 'Cloud & Serverless Systems',
-    icon: Cloud,
+    label: 'AI ENGINEERING',
+    title: 'LLM-powered applications',
+    className: 'ai',
     skills: [
-      'AWS Lambda & API Gateway',
-      'DynamoDB & S3 Integration',
-      'Serverless Architecture Design',
-      'Secure IAM Access Control',
-      'Dockerized Deployments'
-    ]
+      ['LangChain', true], ['Hugging Face', true], ['LLM APIs', true], ['RAG', true],
+      ['FAISS', true], ['Vector Embeddings', true], ['Semantic Search', true], ['AI Agents', true],
+    ],
   },
-  {
-    title: 'AI & Generative AI Systems',
-    icon: Brain,
-    skills: [
-      'LLM API Integration',
-      'Vector Databases (FAISS)',
-      'RAG Pipelines',
-      'Prompt Engineering',
-      'Semantic Search Systems'
-    ]
-  },
-  {
-    title: 'System Architecture & Security',
-    icon: Settings,
-    skills: [
-      'Multi-Tenant SaaS Design',
-      'Role-Based Access Control',
-      'Optimized Database Indexing',
-      'Scalable Data Models',
-      'Clean & Modular Architecture'
-    ]
-  }
-];
+]
 
+const secondarySkills = [
+  { label: 'MACHINE LEARNING', skills: [['Scikit-learn', true], ['OpenCV', true], ['XGBoost', false]] },
+  { label: 'DATABASES', skills: [['MongoDB', true], ['MySQL', false], ['DynamoDB', false]] },
+  { label: 'CLOUD & DEVOPS', skills: [['S3', true], ['Docker', true], ['AWS Lambda', false], ['API Gateway', false], ['Terraform', false]] },
+  { label: 'FRONTEND & TOOLS', skills: [['React', true], ['Next.js', true], ['JavaScript', false], ['HTML', false], ['CSS', false], ['Git', true], ['GitHub', true], ['Postman', false]] },
+]
+
+function SkillTags({ skills }) {
+  return (
+    <div className="skill-tags">
+      {skills.map(([name, used]) => <span className={used ? 'used' : ''} key={name}>{name}</span>)}
+    </div>
+  )
+}
 
 export default function Expertise() {
   return (
-    <section id="expertise" className="section expertise-section">
-      <div className="container">
-        <h2 className="section-title">Core Expertise</h2>
-        
-        <div className="expertise-grid">
-          {expertiseAreas.map((area, idx) => {
-            const Icon = area.icon
-            return (
-              <div key={idx} className="expertise-card">
-                <div className="icon-wrapper">
-                  <Icon size={32} />
-                </div>
-                <h3>{area.title}</h3>
-                <ul className="skills-list">
-                  {area.skills.map((skill, i) => (
-                    <li key={i}>{skill}</li>
-                  ))}
-                </ul>
-              </div>
-            )
-          })}
+    <section id="expertise">
+      <div className="w">
+        <SectionHeading
+          eyebrow="02 / TECHNICAL EXPERTISE"
+          title="Tools I work with."
+          description="A practical toolkit across backend engineering, AI applications, databases and full-stack development."
+        />
+        <div className="primary-skills">
+          {primarySkills.map((group) => (
+            <article className={`primary-skill ${group.className}`} key={group.label}>
+              <small>{group.label}</small>
+              <h3>{group.title}</h3>
+              <SkillTags skills={group.skills} />
+            </article>
+          ))}
+        </div>
+        <div className="secondary-skills">
+          {secondarySkills.map((group) => (
+            <article className="secondary-skill" key={group.label}>
+              <small>{group.label}</small>
+              <div className="skill-spacer" />
+              <SkillTags skills={group.skills} />
+            </article>
+          ))}
+        </div>
+        <div className="skill-legend">
+          <span className="used">Used hands-on in my projects</span>
+          <span>Familiar / learning</span>
         </div>
       </div>
     </section>
